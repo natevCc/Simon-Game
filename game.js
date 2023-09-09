@@ -4,6 +4,7 @@ var userClickedPattern = [];
 var isStarted = false;
 var level = 0;
 var nextSequenceTimeout;
+var recordLevel = 0;
 
 $(document).keypress(function() {
     if (isStarted) {
@@ -50,6 +51,7 @@ function nextSequence() {
     level++;
 
     updateTitle(`Ниво ${level}`);
+    updateRecord();
 }
 
 function checkAnswer(currentLevel) {
@@ -78,4 +80,16 @@ function startOver() {
 
 function updateTitle(text) {
     $("#level-title").text(text);
+}
+
+function updateRecordTitle(text) {
+    $("#record-title").text(text);
+}
+
+function updateRecord() {
+    if (level > recordLevel) {
+        recordLevel = level;
+    }
+
+    updateRecordTitle(`Настоящ Рекорд ${recordLevel}`);
 }
