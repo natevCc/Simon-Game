@@ -51,6 +51,7 @@ function nextSequence() {
     level++;
 
     updateTitle(`Ниво ${level}`);
+    //
     updateRecord();
 }
 
