@@ -51,7 +51,6 @@ function nextSequence() {
     level++;
 
     updateTitle(`Ниво ${level}`);
-    //
     updateRecord();
 }
 
@@ -84,7 +83,7 @@ function updateTitle(text) {
 }
 
 function updateRecordTitle(text) {
-    $("#record-title").text(text);
+    document.querySelector("#record-title").textContent = text;
 }
 
 function updateRecord() {
